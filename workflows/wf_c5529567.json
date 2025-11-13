@@ -1,0 +1,25 @@
+{
+  "name": "test2",
+  "description": "",
+  "created_at": "2025-11-13 20:20:15",
+  "start_url": "about:blank",
+  "actions": [
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/",
+      "timestamp": 463.50789070129395
+    },
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/",
+      "timestamp": 521.4881896972656
+    },
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/",
+      "timestamp": 553.4441471099854
+    }
+  ],
+  "duration": 35.20850419998169,
+  "id": "wf_c5529567"
+}

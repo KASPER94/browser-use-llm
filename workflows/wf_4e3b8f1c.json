@@ -1,0 +1,229 @@
+{
+  "name": "test3",
+  "description": "",
+  "created_at": "2025-11-13 20:32:15",
+  "start_url": "about:blank",
+  "actions": [
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/",
+      "timestamp": 316.4067268371582
+    },
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/",
+      "timestamp": 386.81983947753906
+    },
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/",
+      "timestamp": 415.96174240112305
+    },
+    {
+      "type": "click",
+      "selector": "#searchbox_input",
+      "text": "",
+      "timestamp": 1763062306714
+    },
+    {
+      "type": "click",
+      "selector": "#searchbox_input",
+      "text": "",
+      "timestamp": 1763062306714
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "p",
+      "timestamp": 1763062308698
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "p",
+      "timestamp": 1763062308698
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "pl",
+      "timestamp": 1763062308764
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "pl",
+      "timestamp": 1763062308764
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "pla",
+      "timestamp": 1763062310526
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "pla",
+      "timestamp": 1763062310526
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "play",
+      "timestamp": 1763062311167
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "play",
+      "timestamp": 1763062311168
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playm",
+      "timestamp": 1763062312034
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playm",
+      "timestamp": 1763062312035
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmo",
+      "timestamp": 1763062312231
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmo",
+      "timestamp": 1763062312231
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmob",
+      "timestamp": 1763062312466
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmob",
+      "timestamp": 1763062312467
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmobi",
+      "timestamp": 1763062312655
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmobi",
+      "timestamp": 1763062312656
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmobil",
+      "timestamp": 1763062313371
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmobil",
+      "timestamp": 1763062313371
+    },
+    {
+      "type": "click",
+      "selector": "#-1864742545",
+      "text": "playmobil",
+      "timestamp": 1763062315117
+    },
+    {
+      "type": "click",
+      "selector": "#-1864742545",
+      "text": "playmobil",
+      "timestamp": 1763062315117
+    },
+    {
+      "type": "click",
+      "selector": "button.iconButton_button__A_Uiu.searchbox_searchButton__LxebD",
+      "text": "",
+      "timestamp": 1763062315119
+    },
+    {
+      "type": "click",
+      "selector": "button.iconButton_button__A_Uiu.searchbox_searchButton__LxebD",
+      "text": "",
+      "timestamp": 1763062315119
+    },
+    {
+      "type": "click",
+      "selector": "span.EKtkFWMYpwzMKOYr0GYm.LQVY1Jpkk8nyJ6HBWKAk",
+      "text": "PLAYMOBIL® France",
+      "timestamp": 1763062321093
+    },
+    {
+      "type": "click",
+      "selector": "use",
+      "text": "",
+      "timestamp": 1763062324378
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "p",
+      "timestamp": 1763062325970
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "po",
+      "timestamp": 1763062326151
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pom",
+      "timestamp": 1763062326381
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pomp",
+      "timestamp": 1763062326621
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pompi",
+      "timestamp": 1763062326870
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pompie",
+      "timestamp": 1763062327342
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pompier",
+      "timestamp": 1763062327583
+    },
+    {
+      "type": "click",
+      "selector": "div.productTileLandscape__name",
+      "text": "Camion de pompiers avec échelle pivotante",
+      "timestamp": 1763062329626
+    }
+  ],
+  "duration": 30.84038782119751,
+  "id": "wf_4e3b8f1c"
+}

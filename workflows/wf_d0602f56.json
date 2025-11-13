@@ -1,0 +1,53 @@
+{
+  "name": "test",
+  "description": "",
+  "created_at": "2025-11-13 19:27:51",
+  "start_url": "about:blank",
+  "actions": [
+    {
+      "type": "goto",
+      "url": "https://github.com/",
+      "timestamp": 904.0088653564453
+    },
+    {
+      "type": "goto",
+      "url": "https://github.com/",
+      "timestamp": 1239.8438453674316
+    },
+    {
+      "type": "goto",
+      "url": "https://github.com/",
+      "timestamp": 1489.985704421997
+    },
+    {
+      "type": "goto",
+      "url": "https://github.com/",
+      "timestamp": 1490.4098510742188
+    },
+    {
+      "type": "goto",
+      "url": "https://github.com/",
+      "timestamp": 1490.6549453735352
+    },
+    {
+      "type": "click",
+      "selector": "span.Text__StyledText-sc-1klmep6-0.dVFwsC.search-match.prc-Text-Text-0ima0",
+      "text": "Playwright is a framework for Web Testing and Auto",
+      "timestamp": 1763058430575
+    },
+    {
+      "type": "click",
+      "selector": "div.Box-sc-62in7e-0.eKgILY",
+      "text": "Star",
+      "timestamp": 1763058435939
+    },
+    {
+      "type": "click",
+      "selector": "div.Box-sc-62in7e-0.eKgILY",
+      "text": "Star",
+      "timestamp": 1763058443128
+    }
+  ],
+  "duration": 80.88184881210327,
+  "id": "wf_d0602f56"
+}

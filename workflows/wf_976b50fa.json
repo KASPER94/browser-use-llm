@@ -1,0 +1,222 @@
+{
+  "name": "test4",
+  "description": "",
+  "created_at": "2025-11-13 20:36:00",
+  "start_url": "https://duckduckgo.com/?origin=funnel_home_website&t=h_&q=playmobil&ia=shopping&iax=shopping",
+  "actions": [
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/?origin=funnel_home_website&t=h_&q=playmobil&ia=shopping&iax=shopping",
+      "timestamp": 632.5359344482422
+    },
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/?origin=funnel_home_website&t=h_&q=playmobil&ia=shopping&iax=shopping",
+      "timestamp": 680.1080703735352
+    },
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/?origin=funnel_home_website&t=h_&q=playmobil&ia=shopping&iax=shopping",
+      "timestamp": 706.2790393829346
+    },
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/?origin=funnel_home_website&t=h_&q=playmobil&ia=shopping&iax=shopping",
+      "timestamp": 793.4551239013672
+    },
+    {
+      "type": "click",
+      "selector": "#search_form_input",
+      "text": "",
+      "timestamp": 1763062526542
+    },
+    {
+      "type": "click",
+      "selector": "#search_form_input",
+      "text": "",
+      "timestamp": 1763062526542
+    },
+    {
+      "type": "click",
+      "selector": "div.header__search-wrap",
+      "text": "DuckDuckGo\nplaymobil\nplaymobil gd\nplaymobil toys\np",
+      "timestamp": 1763062528013
+    },
+    {
+      "type": "click",
+      "selector": "div.header__search-wrap",
+      "text": "DuckDuckGo\nplaymobil\nplaymobil gd\nplaymobil toys\np",
+      "timestamp": 1763062528013
+    },
+    {
+      "type": "fill",
+      "selector": "#search_form_input",
+      "value": "",
+      "timestamp": 1763062528657
+    },
+    {
+      "type": "fill",
+      "selector": "#search_form_input",
+      "value": "",
+      "timestamp": 1763062528657
+    },
+    {
+      "type": "fill",
+      "selector": "#search_form_input",
+      "value": "s",
+      "timestamp": 1763062530526
+    },
+    {
+      "type": "fill",
+      "selector": "#search_form_input",
+      "value": "s",
+      "timestamp": 1763062530526
+    },
+    {
+      "type": "fill",
+      "selector": "#search_form_input",
+      "value": "sn",
+      "timestamp": 1763062531068
+    },
+    {
+      "type": "fill",
+      "selector": "#search_form_input",
+      "value": "sn",
+      "timestamp": 1763062531068
+    },
+    {
+      "type": "fill",
+      "selector": "#search_form_input",
+      "value": "snc",
+      "timestamp": 1763062531449
+    },
+    {
+      "type": "fill",
+      "selector": "#search_form_input",
+      "value": "snc",
+      "timestamp": 1763062531449
+    },
+    {
+      "type": "fill",
+      "selector": "#search_form_input",
+      "value": "sncf",
+      "timestamp": 1763062531589
+    },
+    {
+      "type": "fill",
+      "selector": "#search_form_input",
+      "value": "sncf",
+      "timestamp": 1763062531590
+    },
+    {
+      "type": "fill",
+      "selector": "#search_form_input",
+      "value": "sncf ",
+      "timestamp": 1763062532073
+    },
+    {
+      "type": "fill",
+      "selector": "#search_form_input",
+      "value": "sncf ",
+      "timestamp": 1763062532074
+    },
+    {
+      "type": "fill",
+      "selector": "#search_form_input",
+      "value": "sncf c",
+      "timestamp": 1763062532418
+    },
+    {
+      "type": "fill",
+      "selector": "#search_form_input",
+      "value": "sncf c",
+      "timestamp": 1763062532418
+    },
+    {
+      "type": "fill",
+      "selector": "#search_form_input",
+      "value": "sncf co",
+      "timestamp": 1763062533049
+    },
+    {
+      "type": "fill",
+      "selector": "#search_form_input",
+      "value": "sncf co",
+      "timestamp": 1763062533049
+    },
+    {
+      "type": "fill",
+      "selector": "#search_form_input",
+      "value": "sncf con",
+      "timestamp": 1763062533377
+    },
+    {
+      "type": "fill",
+      "selector": "#search_form_input",
+      "value": "sncf con",
+      "timestamp": 1763062533377
+    },
+    {
+      "type": "fill",
+      "selector": "#search_form_input",
+      "value": "sncf conn",
+      "timestamp": 1763062533445
+    },
+    {
+      "type": "fill",
+      "selector": "#search_form_input",
+      "value": "sncf conn",
+      "timestamp": 1763062533445
+    },
+    {
+      "type": "fill",
+      "selector": "#search_form_input",
+      "value": "sncf conne",
+      "timestamp": 1763062533959
+    },
+    {
+      "type": "fill",
+      "selector": "#search_form_input",
+      "value": "sncf conne",
+      "timestamp": 1763062533959
+    },
+    {
+      "type": "fill",
+      "selector": "#search_form_input",
+      "value": "sncf connec",
+      "timestamp": 1763062534218
+    },
+    {
+      "type": "fill",
+      "selector": "#search_form_input",
+      "value": "sncf connec",
+      "timestamp": 1763062534218
+    },
+    {
+      "type": "click",
+      "selector": "strong",
+      "text": "t",
+      "timestamp": 1763062536675
+    },
+    {
+      "type": "click",
+      "selector": "strong",
+      "text": "t",
+      "timestamp": 1763062536675
+    },
+    {
+      "type": "click",
+      "selector": "a.kFFXe30DOpq5j1hbWU1q.wZ4JdaHxSAhGy1HoNVja.d26Geqs1C__RaCO7MUs2",
+      "text": " Tout",
+      "timestamp": 1763062540458
+    },
+    {
+      "type": "click",
+      "selector": "span.EKtkFWMYpwzMKOYr0GYm.LQVY1Jpkk8nyJ6HBWKAk",
+      "text": "SNCF Connect : Réservez vos billets SNCF, bus et c",
+      "timestamp": 1763062544658
+    }
+  ],
+  "duration": 38.35382390022278,
+  "id": "wf_976b50fa"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "pompier toy",
+  "description": "",
+  "created_at": "2025-11-13 19:34:54",
+  "start_url": "about:blank",
+  "actions": [
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/",
+      "timestamp": 805.8812618255615
+    },
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/",
+      "timestamp": 859.0700626373291
+    },
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/",
+      "timestamp": 890.2590274810791
+    }
+  ],
+  "duration": 43.95956611633301,
+  "id": "wf_6078a21d"
+}
