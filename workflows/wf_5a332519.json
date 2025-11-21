@@ -1,0 +1,173 @@
+{
+  "name": "last",
+  "description": "",
+  "created_at": "2025-11-14 18:00:53",
+  "start_url": "about:blank",
+  "actions": [
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/",
+      "timestamp": 802.236795425415
+    },
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/",
+      "timestamp": 847.4538326263428
+    },
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/",
+      "timestamp": 870.8727359771729
+    },
+    {
+      "type": "click",
+      "selector": "#searchbox_input",
+      "context": {
+        "ariaLabel": "Search with DuckDuckGo",
+        "role": "combobox"
+      },
+      "timestamp": 1763139618122
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "p",
+      "timestamp": 1763139618513
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "pl",
+      "timestamp": 1763139618583
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "pla",
+      "timestamp": 1763139618824
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "play",
+      "timestamp": 1763139618997
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playm",
+      "timestamp": 1763139619504
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmo",
+      "timestamp": 1763139620235
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmob",
+      "timestamp": 1763139620405
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmobi",
+      "timestamp": 1763139620600
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmobiu",
+      "timestamp": 1763139620607
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmobi",
+      "timestamp": 1763139621100
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmobil",
+      "timestamp": 1763139621701
+    },
+    {
+      "type": "click",
+      "selector": "[aria-label=\"Search\"]",
+      "context": {
+        "index": 1,
+        "totalSiblings": 2,
+        "ariaLabel": "Search"
+      },
+      "timestamp": 1763139622304
+    },
+    {
+      "type": "click",
+      "selector": "[data-iconid=\"search\"]",
+      "context": {},
+      "timestamp": 1763139640991
+    },
+    {
+      "type": "click",
+      "selector": "[name=\"q\"]",
+      "context": {
+        "index": 1,
+        "totalSiblings": 3
+      },
+      "timestamp": 1763139642175
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "p",
+      "timestamp": 1763139644188
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "po",
+      "timestamp": 1763139644394
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pom",
+      "timestamp": 1763139644615
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pomp",
+      "timestamp": 1763139644832
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pompi",
+      "timestamp": 1763139645152
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pompie",
+      "timestamp": 1763139645306
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pompier",
+      "timestamp": 1763139645406
+    },
+    {
+      "type": "click",
+      "selector": "div.productTileLandscape__spacer",
+      "context": {},
+      "timestamp": 1763139646999
+    }
+  ],
+  "duration": 37.19578695297241,
+  "id": "wf_5a332519"
+}

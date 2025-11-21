@@ -26,6 +26,7 @@ try:
     from workflow_recorder import WorkflowRecorder
     from workflow_storage import WorkflowStorage
     from workflow_player import WorkflowPlayer  # NOUVEAU
+    from vlm_service import VLMService  # NOUVEAU
     BROWSERGYM_AVAILABLE = True
     print("✓ BrowserGym loaded successfully")
 except ImportError as e:
@@ -62,6 +63,7 @@ class BrowserGymServer:
         # NOUVEAU: Workflow recording
         self.workflow_recorder: Optional[WorkflowRecorder] = None
         self.workflow_storage = WorkflowStorage() if BROWSERGYM_AVAILABLE else None
+        self.vlm_service = VLMService() if BROWSERGYM_AVAILABLE else None
         self.is_recording = False
         
         if self.use_hybrid:
@@ -664,7 +666,7 @@ class BrowserGymServer:
             logger.error(f"Error getting workflow: {e}")
             return {'type': 'error', 'error': str(e)}
     
-    async def handle_play_workflow(self, workflow_id: str) -> Dict[str, Any]:
+    async def handle_play_workflow(self, workflow_id: str, variables: Dict[str, str] = None) -> Dict[str, Any]:
         """Rejouer un workflow enregistré"""
         try:
             if not self.page:
@@ -679,8 +681,8 @@ class BrowserGymServer:
             logger.info(f"▶️ Playing workflow: {workflow.get('name')}")
             
             # Créer player et exécuter
-            player = WorkflowPlayer(self.page)
-            results = await player.play(workflow)
+            player = WorkflowPlayer(self.page, self.vlm_service)
+            results = await player.play(workflow, variables)
             
             return {
                 'type': 'workflow_completed',
@@ -697,14 +699,21 @@ class BrowserGymServer:
         """Supprimer un workflow"""
         try:
             if not workflow_id:
+                logger.error("❌ Missing workflow_id in delete request")
                 return {'type': 'error', 'error': 'Missing workflow_id'}
             
+            logger.info(f"🗑️ Deleting workflow: {workflow_id}")
             success = self.workflow_storage.delete(workflow_id)
             
-            return {
+            logger.info(f"✅ Workflow deleted (success={success}), sending response...")
+            
+            response = {
                 'type': 'workflow_deleted',
                 'data': {'workflow_id': workflow_id, 'success': success}
             }
+            
+            logger.info(f"📤 Sending response: {response}")
+            return response
             
         except Exception as e:
             logger.error(f"Error deleting workflow: {e}")
@@ -766,7 +775,8 @@ class BrowserGymServer:
                         response = await self.handle_get_workflow(workflow_id)
                     elif msg_type == 'play_workflow':
                         workflow_id = data.get('workflow_id')
-                        response = await self.handle_play_workflow(workflow_id)
+                        variables = data.get('variables', {})
+                        response = await self.handle_play_workflow(workflow_id, variables)
                     elif msg_type == 'delete_workflow':
                         workflow_id = data.get('workflow_id')
                         response = await self.handle_delete_workflow(workflow_id)

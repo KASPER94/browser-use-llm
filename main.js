@@ -371,14 +371,120 @@ ipcMain.handle('enable-recording-mode', async (event) => {
           // Helper: générer selector robuste
           function getSelector(element) {
             if (!element) return 'unknown';
+            
+            // Priorité 1: ID (le plus stable)
             if (element.id) return '#' + element.id;
+            
+            // Priorité 2: Attribut name pour les inputs
             if (element.name) return \`[name="\${element.name}"]\`;
             
+            // Priorité 3: data-testid ou data-* attributes
+            if (element.dataset) {
+              if (element.dataset.testid) return \`[data-testid="\${element.dataset.testid}"]\`;
+              const dataKeys = Object.keys(element.dataset);
+              if (dataKeys.length > 0) {
+                const firstKey = dataKeys[0];
+                return \`[data-\${firstKey}="\${element.dataset[firstKey]}"]\`;
+              }
+            }
+            
+            // Priorité 4: Attributs ARIA
+            if (element.getAttribute('aria-label')) {
+              return \`[aria-label="\${element.getAttribute('aria-label')}"]\`;
+            }
+            if (element.getAttribute('role')) {
+              const role = element.getAttribute('role');
+              const tag = element.tagName.toLowerCase();
+              return \`\${tag}[role="\${role}"]\`;
+            }
+            
             const tag = element.tagName ? element.tagName.toLowerCase() : 'unknown';
-            const classes = element.className && typeof element.className === 'string' 
-              ? '.' + element.className.trim().split(/\\s+/).join('.') 
-              : '';
-            return tag + classes;
+            
+            // Priorité 5: Classes CSS (en filtrant les classes dynamiques/hachées)
+            if (element.className && typeof element.className === 'string') {
+              const classes = element.className.trim().split(/\s+/).filter(cls => {
+                // Filtrer les classes qui semblent dynamiques (contiennent des hash)
+                // Ex: EKtkFWMYpwzMKOYr0GYm, LQVY1Jpkk8nyJ6HBWKAk
+                return cls.length < 30 && // Pas trop longues
+                       !/^[A-Z][a-z0-9]{15,}/.test(cls) && // Pas de pattern hash type React
+                       !/^[a-f0-9]{8,}/.test(cls); // Pas de hash hexadécimal
+              });
+              
+              if (classes.length > 0) {
+                return tag + '.' + classes.join('.');
+              }
+            }
+            
+            // Priorité 6: Full Path (Hierarchy) - NOUVEAU: Fallback robuste
+            // Si on n'a rien trouvé de précis, on construit un chemin relatif
+            try {
+              let path = tag;
+              let current = element;
+              while (current.parentElement && current.parentElement !== document.body) {
+                current = current.parentElement;
+                const parentTag = current.tagName.toLowerCase();
+                const siblings = Array.from(current.children);
+                const index = siblings.indexOf(element);
+                
+                // Ajouter index si nécessaire
+                const sameTagSiblings = siblings.filter(s => s.tagName.toLowerCase() === element.tagName.toLowerCase());
+                if (sameTagSiblings.length > 1) {
+                   const sameTagIndex = sameTagSiblings.indexOf(element) + 1; // nth-of-type est 1-based
+                   path = \`\${parentTag} > \${tag}:nth-of-type(\${sameTagIndex})\`;
+                } else {
+                   path = \`\${parentTag} > \${tag}\`;
+                }
+                
+                // Si le parent a un ID, on s'arrête là
+                if (current.id) {
+                   path = \`#\${current.id} > \${path}\`;
+                   return path;
+                }
+                
+                // On remonte juste d'un niveau pour ne pas faire des sélecteurs trop longs
+                break; 
+              }
+              return path;
+            } catch (e) {
+              return tag;
+            }
+          }
+          
+          // Helper: extraire informations contextuelles pour un élément
+          function getElementContext(element) {
+            const context = {};
+            
+            // Texte visible (limité à 100 caractères)
+            const text = (element.innerText || element.textContent || '').trim();
+            if (text) {
+              context.text = text.substring(0, 100);
+            }
+            
+            // Position dans une liste (si l'élément est dans une liste)
+            const parent = element.parentElement;
+            if (parent) {
+              const siblings = Array.from(parent.children);
+              const index = siblings.indexOf(element);
+              if (index > 0 && siblings.length > 1) {
+                context.index = index;
+                context.totalSiblings = siblings.length;
+              }
+            }
+            
+            // Attributs ARIA
+            if (element.getAttribute('aria-label')) {
+              context.ariaLabel = element.getAttribute('aria-label');
+            }
+            if (element.getAttribute('role')) {
+              context.role = element.getAttribute('role');
+            }
+            
+            // Href pour les liens
+            if (element.href) {
+              context.href = element.href;
+            }
+            
+            return context;
           }
           
           // Fonction pour logger (utilisée pour envoyer au main process)
@@ -398,11 +504,37 @@ ipcMain.handle('enable-recording-mode', async (event) => {
           // Capturer les CLICS (phase de capture)
           document.addEventListener('click', (e) => {
             try {
+              // NOUVEAU: Capturer la position de scroll AVANT le clic (si scrollé)
+              const scrollX = window.scrollX || window.pageXOffset || 0;
+              const scrollY = window.scrollY || window.pageYOffset || 0;
+              
+              // Si la page est scrollée, enregistrer la position
+              if (scrollX > 0 || scrollY > 0) {
+                // Vérifier si on n'a pas déjà capturé cette position récemment
+                if (!window.__lastScrollPosition || 
+                    window.__lastScrollPosition.x !== scrollX || 
+                    window.__lastScrollPosition.y !== scrollY) {
+                  
+                  window.__lastScrollPosition = { x: scrollX, y: scrollY };
+                  
+                  logAction({
+                    type: 'scroll',
+                    x: scrollX,
+                    y: scrollY,
+                    timestamp: Date.now()
+                  });
+                  
+                  console.log(\`[LOG] 📜 Captured scroll before click: x=\${scrollX}, y=\${scrollY}\`);
+                }
+              }
+              
+              // Puis capturer le clic normalement
               const selector = getSelector(e.target);
+              const context = getElementContext(e.target);
               const action = {
                 type: 'click',
                 selector: selector,
-                text: (e.target.innerText || e.target.textContent || '').substring(0, 50),
+                context: context, // Ajouter les informations contextuelles
                 timestamp: Date.now()
               };
               logAction(action);
@@ -426,6 +558,25 @@ ipcMain.handle('enable-recording-mode', async (event) => {
               }
             } catch (err) {
               console.log('[LOG] ❌ Fill capture error: ' + err.message);
+            }
+          }, true);
+          
+          // Capturer les SCROLL (avec debounce pour éviter trop d'événements)
+          let scrollTimeout;
+          document.addEventListener('scroll', (e) => {
+            try {
+              clearTimeout(scrollTimeout);
+              scrollTimeout = setTimeout(() => {
+                const action = {
+                  type: 'scroll',
+                  x: window.scrollX || window.pageXOffset || 0,
+                  y: window.scrollY || window.pageYOffset || 0,
+                  timestamp: Date.now()
+                };
+                logAction(action);
+              }, 300); // Debounce de 300ms
+            } catch (err) {
+              console.log('[LOG] ❌ Scroll capture error: ' + err.message);
             }
           }, true);
           
@@ -480,13 +631,110 @@ ipcMain.handle('enable-recording-mode', async (event) => {
           
           function getSelector(element) {
             if (!element) return 'unknown';
+            
+            // Priorité 1: ID (le plus stable)
             if (element.id) return '#' + element.id;
+            
+            // Priorité 2: Attribut name pour les inputs
             if (element.name) return \`[name="\${element.name}"]\`;
+            
+            // Priorité 3: data-testid ou data-* attributes
+            if (element.dataset) {
+              if (element.dataset.testid) return \`[data-testid="\${element.dataset.testid}"]\`;
+              const dataKeys = Object.keys(element.dataset);
+              if (dataKeys.length > 0) {
+                const firstKey = dataKeys[0];
+                return \`[data-\${firstKey}="\${element.dataset[firstKey]}"]\`;
+              }
+            }
+            
+            // Priorité 4: Attributs ARIA
+            if (element.getAttribute('aria-label')) {
+              return \`[aria-label="\${element.getAttribute('aria-label')}"]\`;
+            }
+            if (element.getAttribute('role')) {
+              const role = element.getAttribute('role');
+              const tag = element.tagName.toLowerCase();
+              return \`\${tag}[role="\${role}"]\`;
+            }
+            
             const tag = element.tagName ? element.tagName.toLowerCase() : 'unknown';
-            const classes = element.className && typeof element.className === 'string'
-              ? '.' + element.className.trim().split(/\\s+/).join('.') 
-              : '';
-            return tag + classes;
+            
+            // Priorité 5: Classes CSS (en filtrant les classes dynamiques/hachées)
+            if (element.className && typeof element.className === 'string') {
+              const classes = element.className.trim().split(/\s+/).filter(cls => {
+                // Filtrer les classes qui semblent dynamiques (contiennent des hash)
+                return cls.length < 30 && 
+                       !/^[A-Z][a-z0-9]{15,}/.test(cls) && 
+                       !/^[a-f0-9]{8,}/.test(cls);
+              });
+              
+              if (classes.length > 0) {
+                return tag + '.' + classes.join('.');
+              }
+            }
+            
+            // Priorité 6: Full Path (Hierarchy) - NOUVEAU: Fallback robuste
+            try {
+              let path = tag;
+              let current = element;
+              while (current.parentElement && current.parentElement !== document.body) {
+                current = current.parentElement;
+                const parentTag = current.tagName.toLowerCase();
+                const siblings = Array.from(current.children);
+                const index = siblings.indexOf(element);
+                
+                // Ajouter index si nécessaire
+                const sameTagSiblings = siblings.filter(s => s.tagName.toLowerCase() === element.tagName.toLowerCase());
+                if (sameTagSiblings.length > 1) {
+                   const sameTagIndex = sameTagSiblings.indexOf(element) + 1; // nth-of-type est 1-based
+                   path = \`\${parentTag} > \${tag}:nth-of-type(\${sameTagIndex})\`;
+                } else {
+                   path = \`\${parentTag} > \${tag}\`;
+                }
+                
+                if (current.id) {
+                   path = \`#\${current.id} > \${path}\`;
+                   return path;
+                }
+                break; 
+              }
+              return path;
+            } catch (e) {
+              return tag;
+            }
+          }
+          
+          function getElementContext(element) {
+            const context = {};
+            
+            const text = (element.innerText || element.textContent || '').trim();
+            if (text) {
+              context.text = text.substring(0, 100);
+            }
+            
+            const parent = element.parentElement;
+            if (parent) {
+              const siblings = Array.from(parent.children);
+              const index = siblings.indexOf(element);
+              if (index > 0 && siblings.length > 1) {
+                context.index = index;
+                context.totalSiblings = siblings.length;
+              }
+            }
+            
+            if (element.getAttribute('aria-label')) {
+              context.ariaLabel = element.getAttribute('aria-label');
+            }
+            if (element.getAttribute('role')) {
+              context.role = element.getAttribute('role');
+            }
+            
+            if (element.href) {
+              context.href = element.href;
+            }
+            
+            return context;
           }
           
           function logAction(action) {
@@ -501,11 +749,36 @@ ipcMain.handle('enable-recording-mode', async (event) => {
           if (!window.__captureListenersAttached) {
             document.addEventListener('click', (e) => {
               try {
+                // NOUVEAU: Capturer la position de scroll AVANT le clic (si scrollé)
+                const scrollX = window.scrollX || window.pageXOffset || 0;
+                const scrollY = window.scrollY || window.pageYOffset || 0;
+                
+                // Si la page est scrollée, enregistrer la position
+                if (scrollX > 0 || scrollY > 0) {
+                  if (!window.__lastScrollPosition || 
+                      window.__lastScrollPosition.x !== scrollX || 
+                      window.__lastScrollPosition.y !== scrollY) {
+                    
+                    window.__lastScrollPosition = { x: scrollX, y: scrollY };
+                    
+                    logAction({
+                      type: 'scroll',
+                      x: scrollX,
+                      y: scrollY,
+                      timestamp: Date.now()
+                    });
+                    
+                    console.log(\`[LOG] 📜 Captured scroll before click: x=\${scrollX}, y=\${scrollY}\`);
+                  }
+                }
+                
+                // Puis capturer le clic
                 const selector = getSelector(e.target);
+                const context = getElementContext(e.target);
                 logAction({
                   type: 'click',
                   selector: selector,
-                  text: (e.target.innerText || e.target.textContent || '').substring(0, 50),
+                  context: context,
                   timestamp: Date.now()
                 });
               } catch (err) {
@@ -526,6 +799,23 @@ ipcMain.handle('enable-recording-mode', async (event) => {
                 }
               } catch (err) {
                 console.log('[LOG] ❌ Fill error: ' + err.message);
+              }
+            }, true);
+            
+            let scrollTimeout;
+            document.addEventListener('scroll', (e) => {
+              try {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                  logAction({
+                    type: 'scroll',
+                    x: window.scrollX || window.pageXOffset || 0,
+                    y: window.scrollY || window.pageYOffset || 0,
+                    timestamp: Date.now()
+                  });
+                }, 300);
+              } catch (err) {
+                console.log('[LOG] ❌ Scroll error: ' + err.message);
               }
             }, true);
             

@@ -38,18 +38,26 @@ contextBridge.exposeInMainWorld('electronAPI', {
     return ipcRenderer.invoke('disable-recording-mode');
   },
 
-  // Écouter les messages du serveur Python
+  // Écouter les messages du serveur Python (avec support de multiples listeners)
   onPythonMessage: (callback) => {
-    ipcRenderer.on('python-message', (event, data) => {
-      callback(data);
-    });
+    // Utiliser 'on' qui permet plusieurs listeners
+    const listener = (event, data) => callback(data);
+    ipcRenderer.on('python-message', listener);
+    
+    // Retourner une fonction de nettoyage
+    return () => {
+      ipcRenderer.removeListener('python-message', listener);
+    };
   },
 
   // Écouter le statut WebSocket
   onWebSocketStatus: (callback) => {
-    ipcRenderer.on('websocket-status', (event, status) => {
-      callback(status);
-    });
+    const listener = (event, status) => callback(status);
+    ipcRenderer.on('websocket-status', listener);
+    
+    return () => {
+      ipcRenderer.removeListener('websocket-status', listener);
+    };
   },
 
   // Nettoyer les listeners

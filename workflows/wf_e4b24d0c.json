@@ -1,0 +1,190 @@
+{
+  "name": "test6",
+  "description": "",
+  "created_at": "2025-11-13 23:40:34",
+  "start_url": "about:blank",
+  "actions": [
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/",
+      "timestamp": 410.94493865966797
+    },
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/",
+      "timestamp": 476.6430854797363
+    },
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/",
+      "timestamp": 506.82711601257324
+    },
+    {
+      "type": "click",
+      "selector": "#searchbox_input",
+      "context": {
+        "ariaLabel": "Search with DuckDuckGo",
+        "role": "combobox"
+      },
+      "timestamp": 1763073607782
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "p",
+      "timestamp": 1763073608838
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "pl",
+      "timestamp": 1763073608914
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "pla",
+      "timestamp": 1763073609285
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "play",
+      "timestamp": 1763073609598
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playm",
+      "timestamp": 1763073610162
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmo",
+      "timestamp": 1763073610286
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmob",
+      "timestamp": 1763073610515
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmobi",
+      "timestamp": 1763073610570
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmobil",
+      "timestamp": 1763073610758
+    },
+    {
+      "type": "click",
+      "selector": "#-1864742545",
+      "context": {
+        "text": "playmobil",
+        "role": "option"
+      },
+      "timestamp": 1763073612705
+    },
+    {
+      "type": "click",
+      "selector": "[aria-label=\"Search\"]",
+      "context": {
+        "index": 1,
+        "totalSiblings": 2,
+        "ariaLabel": "Search"
+      },
+      "timestamp": 1763073612707
+    },
+    {
+      "type": "scroll",
+      "x": 0,
+      "y": 187,
+      "timestamp": 1763073618051
+    },
+    {
+      "type": "scroll",
+      "x": 0,
+      "y": 422,
+      "timestamp": 1763073619502
+    },
+    {
+      "type": "click",
+      "selector": "span.EKtkFWMYpwzMKOYr0GYm.LQVY1Jpkk8nyJ6HBWKAk",
+      "context": {
+        "text": "PLAYMOBIL® France"
+      },
+      "timestamp": 1763073621379
+    },
+    {
+      "type": "click",
+      "selector": "[data-iconid=\"search\"]",
+      "context": {},
+      "timestamp": 1763073623694
+    },
+    {
+      "type": "click",
+      "selector": "[name=\"q\"]",
+      "context": {
+        "index": 1,
+        "totalSiblings": 3
+      },
+      "timestamp": 1763073624765
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "p",
+      "timestamp": 1763073625507
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "po",
+      "timestamp": 1763073625607
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pom",
+      "timestamp": 1763073625861
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pomp",
+      "timestamp": 1763073626044
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pompi",
+      "timestamp": 1763073626374
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pompie",
+      "timestamp": 1763073626566
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pompier",
+      "timestamp": 1763073626623
+    },
+    {
+      "type": "click",
+      "selector": "div.productTileLandscape__spacer",
+      "context": {},
+      "timestamp": 1763073628028
+    }
+  ],
+  "duration": 28.430784940719604,
+  "id": "wf_e4b24d0c"
+}

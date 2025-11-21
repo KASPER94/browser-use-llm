@@ -1,0 +1,185 @@
+{
+  "name": "final",
+  "description": "",
+  "created_at": "2025-11-14 17:26:39",
+  "start_url": "about:blank",
+  "actions": [
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/",
+      "timestamp": 648.9191055297852
+    },
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/",
+      "timestamp": 697.0341205596924
+    },
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/",
+      "timestamp": 720.6730842590332
+    },
+    {
+      "type": "click",
+      "selector": "#searchbox_input",
+      "context": {
+        "ariaLabel": "Search with DuckDuckGo",
+        "role": "combobox"
+      },
+      "timestamp": 1763137576252
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "p",
+      "timestamp": 1763137577148
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "pl",
+      "timestamp": 1763137577242
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "pla",
+      "timestamp": 1763137577490
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "play",
+      "timestamp": 1763137577636
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playm",
+      "timestamp": 1763137577931
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmo",
+      "timestamp": 1763137578230
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmob",
+      "timestamp": 1763137578797
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmobi",
+      "timestamp": 1763137578989
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmobil",
+      "timestamp": 1763137579086
+    },
+    {
+      "type": "click",
+      "selector": "[aria-label=\"Search\"]",
+      "context": {
+        "index": 1,
+        "totalSiblings": 2,
+        "ariaLabel": "Search"
+      },
+      "timestamp": 1763137580899
+    },
+    {
+      "type": "scroll",
+      "x": 0,
+      "y": 149,
+      "timestamp": 1763137584445
+    },
+    {
+      "type": "scroll",
+      "x": 0,
+      "y": 149,
+      "timestamp": 1763137584781
+    },
+    {
+      "type": "click",
+      "selector": "span.EKtkFWMYpwzMKOYr0GYm.LQVY1Jpkk8nyJ6HBWKAk",
+      "context": {
+        "text": "PLAYMOBIL® France"
+      },
+      "timestamp": 1763137584782
+    },
+    {
+      "type": "click",
+      "selector": "[data-iconid=\"search\"]",
+      "context": {},
+      "timestamp": 1763137588231
+    },
+    {
+      "type": "click",
+      "selector": "[name=\"q\"]",
+      "context": {
+        "index": 1,
+        "totalSiblings": 3
+      },
+      "timestamp": 1763137591590
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "p",
+      "timestamp": 1763137592009
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "po",
+      "timestamp": 1763137592087
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pom",
+      "timestamp": 1763137592351
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pomp",
+      "timestamp": 1763137592500
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pompi",
+      "timestamp": 1763137592707
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pompie",
+      "timestamp": 1763137592829
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pompier",
+      "timestamp": 1763137592929
+    },
+    {
+      "type": "click",
+      "selector": "div",
+      "context": {
+        "text": "Camion de pompiers avec échelle pivotante\n79,99 €",
+        "index": 1,
+        "totalSiblings": 2
+      },
+      "timestamp": 1763137594586
+    }
+  ],
+  "duration": 25.34005618095398,
+  "id": "wf_1782c1f6"
+}

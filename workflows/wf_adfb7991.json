@@ -1,0 +1,242 @@
+{
+  "name": "lets_do_one_more_time",
+  "description": "",
+  "created_at": "2025-11-21 00:16:32",
+  "start_url": "about:blank",
+  "actions": [
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/",
+      "timestamp": 496.5047836303711
+    },
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/",
+      "timestamp": 551.0427951812744
+    },
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/",
+      "timestamp": 578.9477825164795
+    },
+    {
+      "type": "click",
+      "selector": "#searchbox_input",
+      "context": {
+        "ariaLabel": "Search with DuckDuckGo",
+        "role": "combobox"
+      },
+      "timestamp": 1763680555141
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "p",
+      "timestamp": 1763680556491
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "pl",
+      "timestamp": 1763680556577
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "pla",
+      "timestamp": 1763680556782
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "play",
+      "timestamp": 1763680557143
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playm",
+      "timestamp": 1763680557161
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmo",
+      "timestamp": 1763680557363
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmob",
+      "timestamp": 1763680557546
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmobi",
+      "timestamp": 1763680557679
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmobil",
+      "timestamp": 1763680557891
+    },
+    {
+      "type": "click",
+      "selector": "[aria-label=\"Search\"]",
+      "context": {
+        "index": 1,
+        "totalSiblings": 2,
+        "ariaLabel": "Search"
+      },
+      "timestamp": 1763680558319
+    },
+    {
+      "type": "scroll",
+      "x": 0,
+      "y": 252,
+      "timestamp": 1763680561623
+    },
+    {
+      "type": "scroll",
+      "x": 0,
+      "y": 298,
+      "timestamp": 1763680562712
+    },
+    {
+      "type": "scroll",
+      "x": 0,
+      "y": 298,
+      "timestamp": 1763680562992
+    },
+    {
+      "type": "click",
+      "selector": "a > span",
+      "context": {
+        "text": "Playmobil® Boutique Officielle | Playmobil"
+      },
+      "timestamp": 1763680562993
+    },
+    {
+      "type": "click",
+      "selector": "[data-iconid=\"search\"]",
+      "context": {},
+      "timestamp": 1763680568991
+    },
+    {
+      "type": "click",
+      "selector": "[name=\"q\"]",
+      "context": {
+        "index": 1,
+        "totalSiblings": 3
+      },
+      "timestamp": 1763680570372
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "p",
+      "timestamp": 1763680571633
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "po",
+      "timestamp": 1763680571810
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pom",
+      "timestamp": 1763680571986
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pomp",
+      "timestamp": 1763680572167
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pompe",
+      "timestamp": 1763680572330
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pomper",
+      "timestamp": 1763680572537
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pompe",
+      "timestamp": 1763680573070
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pomp",
+      "timestamp": 1763680573276
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pompi",
+      "timestamp": 1763680574071
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pompie",
+      "timestamp": 1763680574226
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pompier",
+      "timestamp": 1763680574346
+    },
+    {
+      "type": "click",
+      "selector": "div.productTileLand.cape__name",
+      "context": {
+        "text": "Fourgon d'intervention des pompiers"
+      },
+      "timestamp": 1763680576044
+    },
+    {
+      "type": "scroll",
+      "x": 0,
+      "y": 50,
+      "timestamp": 1763680578092
+    },
+    {
+      "type": "scroll",
+      "x": 0,
+      "y": 50,
+      "timestamp": 1763680578712
+    },
+    {
+      "type": "click",
+      "selector": "[data-pid=\"9464\"]",
+      "context": {
+        "text": "Ajouter dans le panier",
+        "ariaLabel": "Ajouter dans le panier"
+      },
+      "timestamp": 1763680578712
+    },
+    {
+      "type": "click",
+      "selector": "svg > use",
+      "context": {
+        "href": {}
+      },
+      "timestamp": 1763680582634
+    }
+  ],
+  "duration": 38.8743999004364,
+  "id": "wf_adfb7991"
+}

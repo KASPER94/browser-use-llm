@@ -29,7 +29,7 @@ export function useBrowserGym() {
 
   useEffect(() => {
     // Écouter les messages du serveur Python
-    window.electronAPI.onPythonMessage((data: PythonMessage) => {
+    const cleanup1 = window.electronAPI.onPythonMessage((data: PythonMessage) => {
       console.log('Received Python message:', data);
 
       // Ignorer les screenshots (gérés par screenshot-handler.js)
@@ -94,7 +94,7 @@ export function useBrowserGym() {
     });
 
     // Écouter le statut WebSocket
-    window.electronAPI.onWebSocketStatus((wsStatus: string) => {
+    const cleanup2 = window.electronAPI.onWebSocketStatus((wsStatus: string) => {
       console.log('WebSocket status:', wsStatus);
       setStatus(prev => ({
         ...prev,
@@ -108,9 +108,10 @@ export function useBrowserGym() {
       }
     });
 
-    // Nettoyer les listeners au démontage
+    // Nettoyer UNIQUEMENT nos listeners (pas tous)
     return () => {
-      window.electronAPI.removeAllListeners();
+      cleanup1();
+      cleanup2();
     };
   }, [addMessage, addSystemMessage]);
 

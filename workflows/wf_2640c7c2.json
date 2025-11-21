@@ -1,0 +1,258 @@
+{
+  "name": "new_test",
+  "description": "",
+  "created_at": "2025-11-20 17:23:13",
+  "start_url": "about:blank",
+  "actions": [
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/",
+      "timestamp": 464.40601348876953
+    },
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/",
+      "timestamp": 520.4470157623291
+    },
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/",
+      "timestamp": 550.5690574645996
+    },
+    {
+      "type": "click",
+      "selector": "#searchbox_input",
+      "context": {
+        "ariaLabel": "Search with DuckDuckGo",
+        "role": "combobox"
+      },
+      "timestamp": 1763655756682
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "p",
+      "timestamp": 1763655758401
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "pl",
+      "timestamp": 1763655758470
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "pla",
+      "timestamp": 1763655758689
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "play",
+      "timestamp": 1763655758844
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playm",
+      "timestamp": 1763655759750
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmb",
+      "timestamp": 1763655760977
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmbo",
+      "timestamp": 1763655761924
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmboi",
+      "timestamp": 1763655762103
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmboil",
+      "timestamp": 1763655762302
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmboi",
+      "timestamp": 1763655763120
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmbo",
+      "timestamp": 1763655763366
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmb",
+      "timestamp": 1763655763404
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playm",
+      "timestamp": 1763655763552
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmo",
+      "timestamp": 1763655764148
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmob",
+      "timestamp": 1763655764321
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmobi",
+      "timestamp": 1763655764461
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmobil",
+      "timestamp": 1763655764631
+    },
+    {
+      "type": "click",
+      "selector": "[aria-label=\"Search\"]",
+      "context": {
+        "index": 1,
+        "totalSiblings": 2,
+        "ariaLabel": "Search"
+      },
+      "timestamp": 1763655765627
+    },
+    {
+      "type": "scroll",
+      "x": 0,
+      "y": 240,
+      "timestamp": 1763655768835
+    },
+    {
+      "type": "scroll",
+      "x": 0,
+      "y": 346,
+      "timestamp": 1763655769952
+    },
+    {
+      "type": "scroll",
+      "x": 0,
+      "y": 346,
+      "timestamp": 1763655770771
+    },
+    {
+      "type": "click",
+      "selector": "span",
+      "context": {
+        "text": "Playmobil® Boutique Officielle | Boutique Officielle"
+      },
+      "timestamp": 1763655770771
+    },
+    {
+      "type": "click",
+      "selector": "[data-iconid=\"search\"]",
+      "context": {},
+      "timestamp": 1763655775955
+    },
+    {
+      "type": "click",
+      "selector": "[name=\"q\"]",
+      "context": {
+        "index": 1,
+        "totalSiblings": 3
+      },
+      "timestamp": 1763655777088
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "p",
+      "timestamp": 1763655779714
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "po",
+      "timestamp": 1763655779809
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pom",
+      "timestamp": 1763655780044
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pomp",
+      "timestamp": 1763655780381
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pompi",
+      "timestamp": 1763655780521
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pompie",
+      "timestamp": 1763655780758
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pompier",
+      "timestamp": 1763655780789
+    },
+    {
+      "type": "click",
+      "selector": "div.productTileLandscape__name",
+      "context": {
+        "text": "Camion de pompiers avec échelle pivotante"
+      },
+      "timestamp": 1763655782772
+    },
+    {
+      "type": "scroll",
+      "x": 0,
+      "y": 83,
+      "timestamp": 1763655784960
+    },
+    {
+      "type": "scroll",
+      "x": 0,
+      "y": 83,
+      "timestamp": 1763655785921
+    },
+    {
+      "type": "click",
+      "selector": "[data-pid=\"9463\"]",
+      "context": {
+        "text": "Ajouter dans le panier",
+        "ariaLabel": "Ajouter dans le panier"
+      },
+      "timestamp": 1763655785922
+    }
+  ],
+  "duration": 39.02799916267395,
+  "id": "wf_2640c7c2"
+}

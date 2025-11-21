@@ -62,8 +62,8 @@ declare global {
       enableRecordingMode: () => Promise<{ success: boolean; url?: string; error?: string }>;
       disableRecordingMode: () => Promise<{ success: boolean; finalUrl?: string; error?: string }>;
       getCapturedActions: () => Promise<{ success: boolean; actions: any[]; error?: string }>;
-      onPythonMessage: (callback: (data: PythonMessage) => void) => void;
-      onWebSocketStatus: (callback: (status: string) => void) => void;
+      onPythonMessage: (callback: (data: PythonMessage) => void) => () => void; // Retourne une fonction de cleanup
+      onWebSocketStatus: (callback: (status: string) => void) => () => void; // Retourne une fonction de cleanup
       removeAllListeners: () => void;
     };
   }

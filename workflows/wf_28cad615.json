@@ -1,0 +1,194 @@
+{
+  "name": "test5",
+  "description": "",
+  "created_at": "2025-11-13 23:36:20",
+  "start_url": "about:blank",
+  "actions": [
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/",
+      "timestamp": 394.7789669036865
+    },
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/",
+      "timestamp": 453.55916023254395
+    },
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/",
+      "timestamp": 489.02416229248047
+    },
+    {
+      "type": "click",
+      "selector": "#searchbox_input",
+      "context": {
+        "ariaLabel": "Search with DuckDuckGo",
+        "role": "combobox"
+      },
+      "timestamp": 1763073351307
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "p",
+      "timestamp": 1763073352588
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "pl",
+      "timestamp": 1763073352660
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "pla",
+      "timestamp": 1763073353034
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "play",
+      "timestamp": 1763073353231
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playm",
+      "timestamp": 1763073354454
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmo",
+      "timestamp": 1763073354681
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmob",
+      "timestamp": 1763073354799
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmobi",
+      "timestamp": 1763073354905
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmobil",
+      "timestamp": 1763073355076
+    },
+    {
+      "type": "click",
+      "selector": "svg",
+      "context": {},
+      "timestamp": 1763073357455
+    },
+    {
+      "type": "scroll",
+      "x": 0,
+      "y": 295,
+      "timestamp": 1763073360537
+    },
+    {
+      "type": "click",
+      "selector": "span.EKtkFWMYpwzMKOYr0GYm.LQVY1Jpkk8nyJ6HBWKAk",
+      "context": {
+        "text": "PLAYMOBIL® France"
+      },
+      "timestamp": 1763073361122
+    },
+    {
+      "type": "click",
+      "selector": "[data-iconid=\"search\"]",
+      "context": {},
+      "timestamp": 1763073363522
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "p",
+      "timestamp": 1763073365691
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "po",
+      "timestamp": 1763073365693
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pom",
+      "timestamp": 1763073365918
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pomp",
+      "timestamp": 1763073366100
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pompi",
+      "timestamp": 1763073366305
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pompie",
+      "timestamp": 1763073366490
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"q\"]",
+      "value": "pompier",
+      "timestamp": 1763073366609
+    },
+    {
+      "type": "scroll",
+      "x": 0,
+      "y": 0,
+      "timestamp": 1763073368507
+    },
+    {
+      "type": "click",
+      "selector": "div.productTileLandscape__spacer",
+      "context": {},
+      "timestamp": 1763073368806
+    },
+    {
+      "type": "scroll",
+      "x": 0,
+      "y": 132,
+      "timestamp": 1763073371021
+    },
+    {
+      "type": "click",
+      "selector": "[data-pid=\"9463\"]",
+      "context": {
+        "text": "Ajouter dans le panier",
+        "ariaLabel": "Ajouter dans le panier"
+      },
+      "timestamp": 1763073372339
+    },
+    {
+      "type": "click",
+      "selector": "a.button.button--primary.miniCart__actionButton",
+      "context": {
+        "text": "Panier",
+        "index": 1,
+        "totalSiblings": 2,
+        "href": "https://www.playmobil.com/fr-fr/panier/"
+      },
+      "timestamp": 1763073374705
+    }
+  ],
+  "duration": 31.627288818359375,
+  "id": "wf_28cad615"
+}

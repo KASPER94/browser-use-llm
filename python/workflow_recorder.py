@@ -40,17 +40,52 @@ class WorkflowRecorder:
             
             // Helper: générer selector robuste
             function getSelector(element) {
-                // Priorité: ID > Name > Class + Tag
+                // Priorité 1: ID (le plus stable)
                 if (element.id) {
                     return '#' + element.id;
                 }
+                
+                // Priorité 2: Attribut name
                 if (element.name) {
                     return `[name="${element.name}"]`;
                 }
                 
                 const tag = element.tagName.toLowerCase();
+                
+                // Priorité 3: Classes
                 const classes = element.className ? '.' + element.className.trim().split(/\\s+/).join('.') : '';
-                return tag + classes;
+                if (classes && classes.length < 50) { // Eviter les classes trop longues/dynamiques
+                    return tag + classes;
+                }
+                
+                // Priorité 4: Full Path (Fallback)
+                try {
+                  let path = tag;
+                  let current = element;
+                  while (current.parentElement && current.parentElement !== document.body) {
+                    current = current.parentElement;
+                    const parentTag = current.tagName.toLowerCase();
+                    const siblings = Array.from(current.children);
+                    
+                    // Ajouter index si nécessaire
+                    const sameTagSiblings = siblings.filter(s => s.tagName.toLowerCase() === element.tagName.toLowerCase());
+                    if (sameTagSiblings.length > 1) {
+                       const sameTagIndex = sameTagSiblings.indexOf(element) + 1;
+                       path = \`\${parentTag} > \${tag}:nth-of-type(\${sameTagIndex})\`;
+                    } else {
+                       path = \`\${parentTag} > \${tag}\`;
+                    }
+                    
+                    if (current.id) {
+                       path = \`#\${current.id} > \${path}\`;
+                       return path;
+                    }
+                    break; 
+                  }
+                  return path;
+                } catch (e) {
+                  return tag;
+                }
             }
             
             // Capturer les CLICS

@@ -1,0 +1,175 @@
+{
+  "name": "test7",
+  "description": "",
+  "created_at": "2025-11-14 14:43:50",
+  "start_url": "about:blank",
+  "actions": [
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/",
+      "timestamp": 686.5129470825195
+    },
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/",
+      "timestamp": 739.4270896911621
+    },
+    {
+      "type": "goto",
+      "url": "https://duckduckgo.com/",
+      "timestamp": 767.2069072723389
+    },
+    {
+      "type": "click",
+      "selector": "#searchbox_input",
+      "context": {
+        "ariaLabel": "Search with DuckDuckGo",
+        "role": "combobox"
+      },
+      "timestamp": 1763127800234
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "p",
+      "timestamp": 1763127801290
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "pl",
+      "timestamp": 1763127801415
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "pla",
+      "timestamp": 1763127802261
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "play",
+      "timestamp": 1763127803189
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playm",
+      "timestamp": 1763127803681
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmo",
+      "timestamp": 1763127803921
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmob",
+      "timestamp": 1763127804295
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmobi",
+      "timestamp": 1763127804465
+    },
+    {
+      "type": "fill",
+      "selector": "#searchbox_input",
+      "value": "playmobil",
+      "timestamp": 1763127804702
+    },
+    {
+      "type": "click",
+      "selector": "[aria-label=\"Search\"]",
+      "context": {
+        "index": 1,
+        "totalSiblings": 2,
+        "ariaLabel": "Search"
+      },
+      "timestamp": 1763127806743
+    },
+    {
+      "type": "scroll",
+      "x": 0,
+      "y": 256,
+      "timestamp": 1763127810446
+    },
+    {
+      "type": "click",
+      "selector": "span.EKtkFWMYpwzMKOYr0GYm.LQVY1Jpkk8nyJ6HBWKAk",
+      "context": {
+        "text": "Les meilleurs Jouets Playmobil - JouéClub"
+      },
+      "timestamp": 1763127811772
+    },
+    {
+      "type": "click",
+      "selector": "[name=\"searchText\"]",
+      "context": {
+        "index": 1,
+        "totalSiblings": 2
+      },
+      "timestamp": 1763127814332
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"searchText\"]",
+      "value": "c",
+      "timestamp": 1763127815459
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"searchText\"]",
+      "value": "ca",
+      "timestamp": 1763127815838
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"searchText\"]",
+      "value": "cam",
+      "timestamp": 1763127816299
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"searchText\"]",
+      "value": "cami",
+      "timestamp": 1763127816606
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"searchText\"]",
+      "value": "camio",
+      "timestamp": 1763127816683
+    },
+    {
+      "type": "fill",
+      "selector": "[name=\"searchText\"]",
+      "value": "camion",
+      "timestamp": 1763127816959
+    },
+    {
+      "type": "scroll",
+      "x": 0,
+      "y": 0,
+      "timestamp": 1763127821247
+    },
+    {
+      "type": "scroll",
+      "x": 0,
+      "y": 0,
+      "timestamp": 1763127821947
+    },
+    {
+      "type": "click",
+      "selector": "[data-ngIf=\"product.thumbnail\"]",
+      "context": {},
+      "timestamp": 1763127822726
+    }
+  ],
+  "duration": 33.17284321784973,
+  "id": "wf_a4ef0201"
+}

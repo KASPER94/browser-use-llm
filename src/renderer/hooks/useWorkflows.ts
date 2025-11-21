@@ -9,60 +9,10 @@ export function useWorkflows() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentWorkflow, setCurrentWorkflow] = useState<Workflow | null>(null);
 
-  // Écouter les messages Python liés aux workflows
-  useEffect(() => {
-    const handlePythonMessage = (data: PythonMessage) => {
-      switch (data.type) {
-        case 'recording_started':
-          setIsRecording(true);
-          // NOUVEAU: Ouvrir le BrowserView pour recording
-          window.electronAPI.enableRecordingMode()
-            .then(result => {
-              if (result.success) {
-                console.log('✓ Recording BrowserView opened:', result.url);
-              } else {
-                console.error('Failed to open recording BrowserView:', result.error);
-              }
-            });
-          break;
 
-        case 'recording_stopped':
-          setIsRecording(false);
-          // NOUVEAU: Fermer le BrowserView
-          window.electronAPI.disableRecordingMode()
-            .then(result => {
-              if (result.success) {
-                console.log('✓ Recording BrowserView closed');
-              }
-            });
-          // Rafraîchir la liste des workflows
-          refreshWorkflows();
-          break;
-
-        case 'workflows_list':
-          if (data.data?.workflows) {
-            setWorkflows(data.data.workflows);
-          }
-          break;
-
-        case 'workflow_data':
-          if (data.data?.workflow) {
-            setCurrentWorkflow(data.data.workflow);
-          }
-          break;
-
-        case 'workflow_completed':
-          setIsPlaying(false);
-          break;
-
-        case 'workflow_deleted':
-          // Rafraîchir la liste après suppression
-          refreshWorkflows();
-          break;
-      }
-    };
-
-    window.electronAPI.onPythonMessage(handlePythonMessage);
+  // Lister les workflows
+  const refreshWorkflows = useCallback(() => {
+    window.electronAPI.sendUserMessage(JSON.stringify({ type: 'list_workflows' }));
   }, []);
 
   // Démarrer l'enregistrement
@@ -96,11 +46,6 @@ export function useWorkflows() {
     }
   }, []);
 
-  // Lister les workflows
-  const refreshWorkflows = useCallback(() => {
-    window.electronAPI.sendUserMessage(JSON.stringify({ type: 'list_workflows' }));
-  }, []);
-
   // Obtenir un workflow par ID
   const getWorkflow = useCallback((workflowId: string) => {
     window.electronAPI.sendUserMessage(JSON.stringify({
@@ -120,11 +65,86 @@ export function useWorkflows() {
 
   // Supprimer un workflow
   const deleteWorkflow = useCallback((workflowId: string) => {
+    console.log('🗑️ Deleting workflow:', workflowId);
     window.electronAPI.sendUserMessage(JSON.stringify({
       type: 'delete_workflow',
       workflow_id: workflowId
     }));
   }, []);
+
+  // Écouter les messages Python liés aux workflows
+  useEffect(() => {
+    const handlePythonMessage = (data: PythonMessage) => {
+      console.log('[useWorkflows] Received message:', data.type, data);
+      
+      switch (data.type) {
+        case 'recording_started':
+          console.log('[useWorkflows] → recording_started');
+          setIsRecording(true);
+          // NOUVEAU: Ouvrir le BrowserView pour recording
+          window.electronAPI.enableRecordingMode()
+            .then(result => {
+              if (result.success) {
+                console.log('✓ Recording BrowserView opened:', result.url);
+              } else {
+                console.error('Failed to open recording BrowserView:', result.error);
+              }
+            });
+          break;
+
+        case 'recording_stopped':
+          console.log('[useWorkflows] → recording_stopped');
+          setIsRecording(false);
+          // NOUVEAU: Fermer le BrowserView
+          window.electronAPI.disableRecordingMode()
+            .then(result => {
+              if (result.success) {
+                console.log('✓ Recording BrowserView closed');
+              }
+            });
+          // Rafraîchir la liste des workflows
+          refreshWorkflows();
+          break;
+
+        case 'workflows_list':
+          console.log('[useWorkflows] → workflows_list:', data.data?.workflows?.length, 'workflows');
+          if (data.data?.workflows) {
+            setWorkflows(data.data.workflows);
+          }
+          break;
+
+        case 'workflow_data':
+          console.log('[useWorkflows] → workflow_data');
+          if (data.data?.workflow) {
+            setCurrentWorkflow(data.data.workflow);
+          }
+          break;
+
+        case 'workflow_completed':
+          console.log('[useWorkflows] → workflow_completed');
+          setIsPlaying(false);
+          break;
+
+        case 'workflow_deleted':
+          console.log('[useWorkflows] ✅ → workflow_deleted, refreshing list...');
+          // Rafraîchir la liste après suppression
+          refreshWorkflows();
+          break;
+        
+        default:
+          // Log les types non gérés pour debug
+          if (data.type !== 'screenshot' && data.type !== 'init_complete') {
+            console.log('[useWorkflows] Unhandled message type:', data.type);
+          }
+      }
+    };
+
+    // S'abonner aux messages (retourne une fonction de nettoyage)
+    const cleanup = window.electronAPI.onPythonMessage(handlePythonMessage);
+    
+    // Nettoyer à la fin
+    return cleanup;
+  }, [refreshWorkflows]);
 
   // Charger la liste des workflows au montage
   useEffect(() => {
